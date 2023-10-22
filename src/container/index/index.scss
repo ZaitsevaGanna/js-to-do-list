@@ -1,7 +1,103 @@
-@use '../../style' as s;
+.page{
+	padding: 24px;
+	max-width: 720px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
 
-main {
-	background: s.color(dark);
-	color: s.color(light);
-	padding: s.space(4);
-} 
+.title{
+	font-size: 24px;
+	color:#212529;
+
+}
+
+.form{
+	display: grid;
+	grid-template-columns: 5fr 1fr;
+	gap:12px;
+
+	&_button{
+		border-radius: 4px;
+		border: 1px solid #0d6efd;
+		background: #0d6efd; 
+		color:#fff;
+		padding: 8px 16px;
+
+		transition: opacity 0.7s;
+		&:hover{
+			opacity:0.5;
+		}
+	}
+
+	&_input{
+		border-radius: 4px;
+		border:1px solid #ced4da;
+		padding: 8px 16px;
+		color:#212529;
+
+		&::placeholder{
+			color:#909294;
+		}
+	}
+}
+	.task{
+		&_list{
+			display: flex;
+			flex-direction: column;
+			gap:12px;
+		}
+	
+
+	&{
+		display: grid;
+		grid-template-columns: auto 1fr auto auto;
+		gap: 12px;
+		align-items: center;
+
+		padding: 8px 0;
+		border-bottom: 1px solid #d3dee9 ;
+	}
+
+	&_number{
+		color:#212529;
+		font-size: 14px;
+	}
+
+	&_text{
+		transition: opacity 0.7s;
+		color:#212529;
+		font-size: 16px;
+	}
+
+	&_done  &_text{
+		opacity: 0.5;
+		text-decoration: line-through;
+	}
+
+	&_button{
+			transition: opacity 0.7s;
+		&:hover{
+			opacity:0.5;
+		}
+
+		height: 28px;
+		width: 28px;
+		background-size: cover;
+
+
+		&_do{
+			background-image: url(/svg/do.svg);
+		}
+		&_done{
+			background-image: url(/svg/done.svg);
+		}
+		&_cancel{
+			background-image: url(/svg/cancel.svg);
+		}
+	}
+	}
